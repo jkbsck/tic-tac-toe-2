@@ -31,6 +31,19 @@ const game = (() => {
       _setRestartBtn();
       _play();
     });
+
+    // set home btn
+    const homeBtn = document.querySelector("#homeBtn");
+    homeBtn.addEventListener("click", () => {
+      let winner = document.querySelector("#winner");
+      _resetBoard();
+      if (winner.classList.contains("hidden") == false ) {
+      //   winner.classList.add("hidden");
+        _hideWinner();
+      };
+      // document.querySelector("#welcomePage").classList.remove("hidden");
+      _play()
+    });
   };
 
   const _play = () => {
@@ -91,8 +104,6 @@ const game = (() => {
           const winnerSpan = document.querySelector("#winnerName");
           winnerSpan.textContent = `${_winner.player.name} has won the game!`;
           winnerDiv.prepend(winnerSpan);
-
-          
         };
       });
     });
@@ -104,7 +115,6 @@ const game = (() => {
     winnerDiv.classList.add("hidden");
 
     document.getElementsByTagName("body")[0].classList.remove("blur");
-    winnerDiv.classList.remove("blur-none");
   };
 
   // used when announcing the winner
@@ -113,7 +123,6 @@ const game = (() => {
     winnerDiv.classList.remove("hidden");
 
     document.getElementsByTagName("body")[0].classList.add("blur");
-    winnerDiv.classList.add("blur-none");
   };
 
   const _isWinner = () => {

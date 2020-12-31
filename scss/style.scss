@@ -17,6 +17,33 @@ body {
   height: 100px;
   width: 100%;
   background: rgb(48, 48, 255);
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: #bbbbbb77;
+  border: solid 3px #bbbbbbbb;
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
+    background: #bbbbbbbb;
+    border-color: #bbbbbb77;
+  }
+  h2 {
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+  }
 }
 
 // WELCOME PAGE
@@ -134,12 +161,8 @@ body {
   display: none !important;
 }
 
-.blur > * {
+.blur > *:not(#winner, #homeBtn) { // blurs all but header because of buttons
   filter: blur(5px);
-}
-
-.blur-none {
-  filter: none;
 }
 
 // FOOTER
