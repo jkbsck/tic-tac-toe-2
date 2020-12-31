@@ -9,5 +9,144 @@
 }
 
 body {
-  background: #ccc;
+  background: #aac;
+}
+
+// HEADER
+.header {
+  height: 100px;
+  width: 100%;
+  background: rgb(48, 48, 255);
+}
+
+// WELCOME PAGE
+.welcome-page {
+  position: fixed;
+  top: 100px;
+  height: 600px;
+  width: 100%;
+  z-index: 1;
+  background: rgb(26, 62, 130);
+  margin: auto !important;
+
+  .start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background: #bbbbbb77;
+    border: solid 3px #bbbbbbbb;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background: #bbbbbbbb;
+      border-color: #bbbbbb77;
+    }
+    h2 {
+      margin: 0;
+      color: #333;
+      font-weight: 700;
+    }
+  }
+
+  .player-one, .player-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    background: #bbbbbb77;
+    border: solid 3px #bbbbbbbb;
+    border-radius: 5px;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 50%;
+      label {
+        font-size: 24px;
+      }
+      input {
+        background: #ccc;
+        border-radius: 5px;
+      }
+    }   
+  }
+}
+
+// MAIN GAMEBOARD
+.main {
+  .container-fluid {
+    .row {
+      div {
+        height: 200px;
+        background: rgb(78, 173, 250);
+        border: solid 5px white;
+        cursor: pointer;
+        font-size: 120px;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// ANOUNCING WINNER CLASSES
+.winner {
+  position: fixed;
+  height: 240px;
+  width: 600px;
+  top: calc((100vh - 240px) / 2);
+  right: calc((100vw - 600px) / 2);
+  z-index: 1;
+  background: rgb(242, 206, 2);
+  border: solid 5px rgb(202, 172, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  .restart-btn {
+    background-color: #cccccc88;
+    border-radius: 5px;
+    border: solid 5px #aaaaaa40;
+    position: relative;
+    height: 60px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #ccccccaa;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.blur > * {
+  filter: blur(5px);
+}
+
+.blur-none {
+  filter: none;
+}
+
+// FOOTER
+.footer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background: rgb(48, 48, 255);
 }

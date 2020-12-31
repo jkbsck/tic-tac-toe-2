@@ -4,9 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TIC TAC TOE</title>
+  <!-- local stylesheet -->
   <link rel="stylesheet" href="/dist/css/style.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
 </head>
 <body>
   
+  <header class="header"></header>
+
+  <div id="welcomePage" class="welcome-page row">
+    <!-- <div class="col-4 offset-4 quick-start">
+      <h2>Quick Start</h2>
+    </div><br> -->
+
+    <form id="playersForm" class="row align-items-center">
+      <div class="col-3 offset-1 player-one">
+        <h2>Player 1</h2>
+        <div>
+          <label for="playerOneName">Name</label>
+          <input type="text" name="name" id="playerOneName" value="Player 1">
+          <label for="playerOneCharacter">Character</label>
+          <input type="text" name="character" id="playerOneCharacter" value="X">
+        </div>
+      </div>
+
+      <div class="col-2 offset-1 start">
+        <h2>Start</h2>
+      </div>
+
+      <div class="col-3 offset-1 player-two">
+        <h2>Player 2</h2>
+        <div>
+          <label for="playerTwoName">Name</label>
+          <input type="text" name="name" id="playerTwoName" value="Player 2">
+          <label for="playerTwoCharacter">Character</label>
+          <input type="text" name="character" id="playerTwoCharacter" value="O">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <section class="main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+        <div class="col-4 field"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="winner" class="winner hidden">
+    <span id="winnerName"></span>
+    <div id="restartBtnWinner" class="restart-btn">Restart</div>
+  </div>
+
+  <footer class="footer"></footer>
+
+
+  <!-- local script -->
+  <script src="/js/script.js"></script>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 </html>

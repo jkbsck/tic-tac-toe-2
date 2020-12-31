@@ -8,6 +8,187 @@
 }
 
 body {
+  background: #aac;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background: #3030ff;
+}
+
+.welcome-page {
+  position: fixed;
+  top: 100px;
+  height: 600px;
+  width: 100%;
+  z-index: 1;
+  background: #1a3e82;
+  margin: auto !important;
+}
+
+.welcome-page .start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  background: #bbbbbb77;
+  border: solid 3px #bbbbbbbb;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.welcome-page .start:hover {
+  background: #bbbbbbbb;
+  border-color: #bbbbbb77;
+}
+
+.welcome-page .start h2 {
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.welcome-page .player-one, .welcome-page .player-two {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 400px;
+  background: #bbbbbb77;
+  border: solid 3px #bbbbbbbb;
+  border-radius: 5px;
+}
+
+.welcome-page .player-one div, .welcome-page .player-two div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50%;
+}
+
+.welcome-page .player-one div label, .welcome-page .player-two div label {
+  font-size: 24px;
+}
+
+.welcome-page .player-one div input, .welcome-page .player-two div input {
   background: #ccc;
+  border-radius: 5px;
+}
+
+.main .container-fluid .row div {
+  height: 200px;
+  background: #4eadfa;
+  border: solid 5px white;
+  cursor: pointer;
+  font-size: 120px;
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.winner {
+  position: fixed;
+  height: 240px;
+  width: 600px;
+  top: calc((100vh - 240px) / 2);
+  right: calc((100vw - 600px) / 2);
+  z-index: 1;
+  background: #f2ce02;
+  border: solid 5px #caac01;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+.winner .restart-btn {
+  background-color: #cccccc88;
+  border-radius: 5px;
+  border: solid 5px #aaaaaa40;
+  position: relative;
+  height: 60px;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.winner .restart-btn:hover {
+  background-color: #ccccccaa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.blur > * {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
+.blur-none {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  background: #3030ff;
 }
 /*# sourceMappingURL=style.css.map */
