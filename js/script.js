@@ -40,7 +40,7 @@ const game = (() => {
     homeBtn.addEventListener("click", () => {
       let winner = document.querySelector("#winner");
       _resetBoard();
-      if (winner.classList.contains("hidden") == false ) {
+      if (winner.classList.contains("hidden") == false) {
         _hideWinner();
       };
       document.querySelector("#welcomePage").classList.remove("hidden");
@@ -95,13 +95,20 @@ const game = (() => {
         if (_winner.player == false) {
           _isWinner();
         };
-        if (_winner.player != false) {
+        let isFilled = 0;
+        _fields.forEach( (element) => {
+          if (element.textContent == "") {
+            isFilled++;
+          };
+        });
+        if (_winner.player != false || isFilled == 0 ) {
           // anounce winner with option to restart
           const winnerDiv = document.getElementById("winner");
           _showWinner();
 
           const winnerSpan = document.querySelector("#winnerName");
-          winnerSpan.textContent = `${_winner.player.name} has won the game!`;
+
+          _winner.player == false ? winnerSpan.textContent = "It's a tie!" : winnerSpan.textContent = `${_winner.player.name} has won the game!`;
           winnerDiv.prepend(winnerSpan);
         };
       });
@@ -136,8 +143,8 @@ const game = (() => {
     results.forEach(result => {
       result.classList.remove("hidden");
     });
-    document.querySelector("#resultOneName").textContent = _playerOne.name + ":";
-    document.querySelector("#resultTwoName").textContent = _playerTwo.name + ":";
+    document.querySelector("#resultOneName").textContent = _playerOne.name + ` (${_playerOne.character})` + ":";
+    document.querySelector("#resultTwoName").textContent = _playerTwo.name + ` (${_playerTwo.character})` + ":";
     document.querySelector("#resultOneScore").textContent = _playerOne.score;
     document.querySelector("#resultTwoScore").textContent = _playerTwo.score;
   };
