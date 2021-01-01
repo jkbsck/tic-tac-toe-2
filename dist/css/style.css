@@ -24,6 +24,45 @@ body {
   padding-right: 20px;
 }
 
+.result {
+  position: fixed;
+  top: 20px;
+  margin: 0 -10px;
+  left: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  background: #bbbbbb77;
+  border: solid 3px #bbbbbbbb;
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.result:hover {
+  background: #bbbbbbbb;
+  border-color: #bbbbbb77;
+}
+
+.result h5 {
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.result h4 {
+  margin: 0;
+  color: #b60a0a;
+  font-weight: 900;
+}
+
 .home-btn {
   position: fixed;
   top: 20px;
@@ -213,7 +252,7 @@ body {
   display: none !important;
 }
 
-.blur > *:not(#winner, #homeBtn) {
+.blur > *:not(#winner, #homeBtn, .result) {
   -webkit-filter: blur(5px);
           filter: blur(5px);
 }

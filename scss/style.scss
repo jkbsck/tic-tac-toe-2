@@ -22,6 +22,38 @@ body {
   padding-right: 20px;
 }
 
+// RESULTS
+.result {
+  position: fixed;
+  top: 20px;
+  margin: 0 -10px;
+  left: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+  background: #bbbbbb77;
+  border: solid 3px #bbbbbbbb;
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
+    background: #bbbbbbbb;
+    border-color: #bbbbbb77;
+  }
+  h5 {
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+  }
+  h4 {
+    margin: 0;
+    color: rgb(182, 10, 10);
+    font-weight: 900;
+  }
+}
+
+// HOME BUTTON
 .home-btn {
   position: fixed;
   top: 20px;
@@ -161,7 +193,7 @@ body {
   display: none !important;
 }
 
-.blur > *:not(#winner, #homeBtn) { // blurs all but header because of buttons
+.blur > *:not(#winner, #homeBtn, .result) { // blurs all but header because of buttons
   filter: blur(5px);
 }
 
