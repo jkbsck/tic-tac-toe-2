@@ -120,7 +120,7 @@ const game = (() => {
     const winnerDiv = document.getElementById("winner");
     winnerDiv.classList.add("hidden");
 
-    document.getElementsByTagName("body")[0].classList.remove("blur");
+    document.getElementsByClassName("wrapper")[0].classList.remove("blur");
 
     // hide results
     if (_playerOne.score == 0 && _playerTwo.score == 0) {
@@ -136,7 +136,7 @@ const game = (() => {
     const winnerDiv = document.getElementById("winner");
     winnerDiv.classList.remove("hidden");
 
-    document.getElementsByTagName("body")[0].classList.add("blur");
+    document.getElementsByClassName("wrapper")[0].classList.add("blur");
 
     // show results
     const results = [...document.getElementsByClassName("result")];

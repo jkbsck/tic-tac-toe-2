@@ -9,7 +9,14 @@
 }
 
 body {
-  background: #aac;
+  background: linear-gradient(to right, #aaa, #fff 20%, #fff 80%, #aaa) !important;
+
+  & > div {
+    max-width: 1360px;
+    min-width: 680px;
+    position: relative;
+    margin: auto;
+  }
 }
 
 // HEADER
@@ -24,7 +31,7 @@ body {
 
 // RESULTS
 .result {
-  position: fixed;
+  position: absolute;
   top: 20px;
   margin: 0 -10px;
   left: 100px;
@@ -55,7 +62,7 @@ body {
 
 // HOME BUTTON
 .home-btn {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   display: flex;
@@ -80,7 +87,7 @@ body {
 
 // WELCOME PAGE
 .welcome-page {
-  position: fixed;
+  position: absolute;
   top: 100px;
   height: 600px;
   width: 100%;
@@ -129,6 +136,7 @@ body {
       input {
         background: #ccc;
         border-radius: 5px;
+        width: 140px;
       }
     }   
   }
@@ -155,11 +163,11 @@ body {
 
 // ANOUNCING WINNER CLASSES
 .winner {
-  position: fixed;
+  position: absolute;
   height: 240px;
   width: 600px;
   top: calc((100vh - 240px) / 2);
-  right: calc((100vw - 600px) / 2);
+  right: calc((100% - 600px) / 2);
   z-index: 1;
   background: rgb(242, 206, 2);
   border: solid 5px rgb(202, 172, 1);
@@ -199,7 +207,7 @@ body {
 
 // FOOTER
 .footer {
-  height: 100px;
+  height: calc(100vh - 700px);
   width: 100%;
   position: relative;
   bottom: 0;
