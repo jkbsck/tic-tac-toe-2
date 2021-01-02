@@ -17,7 +17,8 @@ const game = (() => {
     name: "Player 2",
     character: "O",
     turn: false,
-    score: 0
+    score: 0,
+    isComputer: false
   };
 
   // stores winning player into this object - false if none
@@ -49,6 +50,7 @@ const game = (() => {
       _playerOne.character = document.getElementById("playerOneCharacter").value[0];
       _playerTwo.name = document.getElementById("playerTwoName").value;
       _playerTwo.character = document.getElementById("playerTwoCharacter").value[0];
+      _playerTwo.isComputer = document.getElementById("playerTwoIsComputer").checked ? true : false;
 
       // sets fields for a game
       _play();
@@ -86,10 +88,21 @@ const game = (() => {
     _fields.forEach(element => {
       element.addEventListener("click", () => {
         if (_playerOne.turn && element.textContent == "") {
+          
           element.textContent = _playerOne.character;
-          _playerOne.turn = false;
-          _playerTwo.turn = true;
           element.classList.toggle("bg-danger");
+
+          // if plays against computer - randomly picks fields
+          if (_playerTwo.isComputer == true) {
+            let freeFields = _fields.filter(field => field.textContent == "");
+            let computerField = freeFields[Math.floor(Math.random() * freeFields.length)];
+            computerField.textContent = _playerTwo.character;
+            computerField.classList.toggle("bg-success");
+          } else {
+            _playerOne.turn = false;
+            _playerTwo.turn = true;
+          };
+        
         } else if (_playerTwo.turn && element.textContent == "") {
           element.textContent = _playerTwo.character;
           _playerOne.turn = true;
@@ -204,7 +217,7 @@ const game = (() => {
     };
   };
 
-  return { welcomePage };
+  return { welcomePage, _playerTwo, _fields };
 
 })();
 
