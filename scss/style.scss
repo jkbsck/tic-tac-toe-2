@@ -39,15 +39,10 @@ body {
   justify-content: space-evenly;
   align-items: center;
   height: 60px;
-  background: #bbbbbb77;
+  // background: #bbbbbb77;
   border: solid 3px #bbbbbbbb;
   border-radius: 5px;
   z-index: 1;
-  cursor: pointer;
-  &:hover {
-    background: #bbbbbbbb;
-    border-color: #bbbbbb77;
-  }
   h5 {
     margin: 0;
     color: #333;
@@ -55,9 +50,16 @@ body {
   }
   h4 {
     margin: 0;
-    color: rgb(182, 10, 10);
     font-weight: 900;
   }
+}
+
+#resultTwo {
+  background: #198754;
+}
+
+#resultOne {
+  background: #dc3545;
 }
 
 // HOME BUTTON

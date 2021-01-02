@@ -1,8 +1,10 @@
 const game = (() => {
   "use strict";
 
-  const _fields = [...document.getElementsByClassName("field")]; // turns HTML collection into an array
+   // turns HTML collection into an array
+  const _fields = [...document.getElementsByClassName("field")];
 
+  // player one object with default options
   const _playerOne = {
     name: "Player 1",
     character: "X",
@@ -10,6 +12,7 @@ const game = (() => {
     score: 0
   };
   
+  // player two object with default options
   const _playerTwo = {
     name: "Player 2",
     character: "O",
@@ -17,12 +20,29 @@ const game = (() => {
     score: 0
   };
 
+  // stores winning player into this object - false if none
   const _winner = {
     player: false
   };
 
+  // only public method - most of listeners are assigned here
   const welcomePage = () => {
-    // assign names and characters if given
+
+    // add listener to start button - assign names and characters if given
+    _setStartBtn();
+
+    // add listener to restart button which will show when winner announced
+    _setRestartBtn();
+
+    // set home btn
+    _setHomeBtn();
+
+    // set listeners to 9 fields on board
+    _setUpBoard();
+  };
+
+  // add listener to start button - assign names and characters if given - call play method
+  const _setStartBtn = () => {
     const start = document.getElementsByClassName("start")[0];
     start.addEventListener("click", () => {
       _playerOne.name = document.getElementById("playerOneName").value;
@@ -30,12 +50,22 @@ const game = (() => {
       _playerTwo.name = document.getElementById("playerTwoName").value;
       _playerTwo.character = document.getElementById("playerTwoCharacter").value[0];
 
+      // sets fields for a game
       _play();
     });
+  };
 
-    _setRestartBtn();
+  // add listener to restart button which will show when winner announced
+  const _setRestartBtn = () => {
+    const restartBtnWinner = document.querySelector("#restartBtnWinner");
+    restartBtnWinner.addEventListener("click", () => { 
+      _hideWinner();
+      _play();
+    });
+  };
 
-    // set home btn
+  // set home button
+  const _setHomeBtn = () => {
     const homeBtn = document.querySelector("#homeBtn");
     homeBtn.addEventListener("click", () => {
       let winner = document.querySelector("#winner");
@@ -48,35 +78,9 @@ const game = (() => {
       _playerTwo.score = 0;
       _hideWinner();
     });
-
-    _setUpBoard();
   };
 
-  const _play = () => {
-    const welcomePageDiv = document.querySelector("#welcomePage");
-    welcomePageDiv.classList.add("hidden");
-    
-    _resetBoard();
-  };
-
-  const _resetBoard = () => {
-    _fields.forEach(field => {
-      field.textContent = "";
-      field.classList.remove("bg-danger");
-      field.classList.remove("bg-success");
-    });
-    _winner.player = false;
-  };
-
-  // restart event listener test
-  const _setRestartBtn = () => {
-    const restartBtnWinner = document.querySelector("#restartBtnWinner");
-    restartBtnWinner.addEventListener("click", () => { 
-      _hideWinner();
-      _play();
-    });
-  };
-
+  // set listeners to 9 fields on board
   const _setUpBoard = () => {
     // add event listener to every field
     _fields.forEach(element => {
@@ -113,6 +117,24 @@ const game = (() => {
         };
       });
     });
+  };
+
+  // sets fields for a game
+  const _play = () => {
+    const welcomePageDiv = document.querySelector("#welcomePage");
+    welcomePageDiv.classList.add("hidden");
+    
+    _resetBoard();
+  };
+
+  // resets board fields
+  const _resetBoard = () => {
+    _fields.forEach(field => {
+      field.textContent = "";
+      field.classList.remove("bg-danger");
+      field.classList.remove("bg-success");
+    });
+    _winner.player = false;
   };
 
   // used when announcing the winner
